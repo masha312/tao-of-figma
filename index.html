@@ -1,0 +1,463 @@
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>tao of figma</title>
+  </head>
+  <body>
+    <header>
+      <h1>Tao of Figma</h1>
+      <h2>Tips for setting up lean component libraries.</h2>
+      <nav>
+        <ul>
+          <li><a href="#naming-convention">Have a naming convention.</a></li>
+          <li>
+            <a href="#properties-order">Put properties in a logical order.</a>
+          </li>
+          <li>
+            <a href="#booleans"
+              >Favor boolean component properties over variants.</a
+            >
+          </li>
+          <li><a href="#layers-have-names">Name your layers.</a></li>
+          <li>
+            <a href="#no-nesting"
+              >Don't nest components in unnecessary frames.</a
+            >
+          </li>
+
+          <li>
+            <a href="#no-recursive-components"
+              >Don't create recursive components.</a
+            >
+          </li>
+
+          <li><a href="#icons">Make icons obvious.</a></li>
+          <li>
+            <a href="#unnecessary-components"
+              >Don't create unnecessary components.</a
+            >
+          </li>
+          <li>
+            <a href="#unnecessary-documentation"
+              >Don't create unnecessary documentation.</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2><a name="naming-convention">Have a naming convention.</a></h2>
+        <p>
+          Components, their properties, and their values should have a
+          consistent naming convention. For example:
+        </p>
+        <ul>
+          <li>Component names are uppercase, with spaces between words.</li>
+          <li>Property names are capitalized.</li>
+          <li>Property values are lowercase.</li>
+        </ul>
+        <div class="image-set">
+          <figure class="positive">
+            <img
+              alt="Consistently named components in Figma"
+              src="images/1a.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Component names are consistent.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Inconsistently named components in Figma"
+              src="images/1b.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Component names are
+              inconsistent.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="image-set">
+          <figure class="positive">
+            <img
+              alt="Consistently named properties in Figma"
+              src="images/2a.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Property names are consistent.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Inconsistently named properties in Figma"
+              src="images/2b.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Property names are
+              inconsistent.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="image-set">
+          <figure class="positive">
+            <img
+              alt="Consistently named property values in Figma"
+              src="images/3a.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Property values are consistent.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Inconsistently named property values in Figma"
+              src="images/3b.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Property values are
+              inconsistent.
+            </figcaption>
+          </figure>
+        </div>
+        <p>Naming convention should also apply to:</p>
+        <ul>
+          <li>
+            Hidden components. For example, you can choose to use a dot as
+            prefix, keep words lowercase, and separate them with dashes.
+          </li>
+          <li>
+            Deprecated components. For example, you can add "DEPRECATED" before
+            component name.
+          </li>
+        </ul>
+
+        <div class="image-set">
+          <figure class="positive">
+            <img
+              alt="Consistently named hidden components in Figma"
+              src="images/4a.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Hidden component names are
+              consistent.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Inconsistently named hidden components in Figma"
+              src="images/4b.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Hidden component names are
+              inconsistent.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="image-set">
+          <figure class="positive">
+            <img
+              alt="Consistently named deprecated components in Figma"
+              src="images/5a.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Deprecated component names are
+              consistent.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Inconsistently named deprecated components in Figma"
+              src="images/5b.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Deprecated component names are
+              inconsistent or not labeled at all.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2>
+          <a name="properties-order">Put properties in a logical order.</a>
+        </h2>
+        <p>
+          Top-down order of component properties should match the reading
+          direction of the component.
+        </p>
+        <figure>
+          <img
+            alt="Using toast component in Figma as an example"
+            src="images/6a.png"
+          />
+          <figcaption>
+            For example, this toast component has an optional icon all the way
+            to the left, then an optional link, and an optional dismiss icon.
+          </figcaption>
+        </figure>
+        <div class="image-set">
+          <figure>
+            <img
+              alt="Toast component properties in Figma ordered left to right"
+              src="images/6b.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Properties appear in order.
+              Notice that the instance swap property for the icon is right under
+              its corresponding boolean property.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Toast component properties in Figma ordered randomly"
+              src="images/6c.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Properties don't appear in
+              order.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2>
+          <a name="booleans"
+            >Favor boolean component properties over variants.</a
+          >
+        </h2>
+        <p>
+          Use boolean properties for toggling the visibility of component
+          layers. This will reduce the component size and make it much more
+          manageable.
+        </p>
+        <figure>
+          <img
+            alt="Toast component has 40 variants instead of 5"
+            src="images/7a.png"
+          />
+          <figcaption>
+            The toast component from above would look like this if we used
+            variants instead of booleans.
+          </figcaption>
+        </figure>
+        <div class="image-set">
+          <figure>
+            <img
+              alt="Toast component properties using booleans"
+              src="images/7b.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Boolean property is used to hide
+              any optional layers.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Toast component properties using variants"
+              src="images/7c.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Variants are used instead of
+              boolean properties.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2><a name="layers-have-names">Name your layers.</a></h2>
+        <p>
+          All component layers should have names. While semantic names are best,
+          it it's okay to have something as simple as "container" or even
+          "frame" (just not "Frame 1453583").
+        </p>
+        <div class="image-set">
+          <figure>
+            <img
+              alt="Component layers with semantic or cleaned up names"
+              src="images/8a.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Component layers have names.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Component layers with default frame names"
+              src="images/8b.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Component layers don't have
+              names.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2>
+          <a name="no-nesting">Don't nest components in unnecessary frames.</a>
+        </h2>
+        <p>
+          Placing components inside (unnamed) frames can make it more difficult
+          to use the component, because it creates additional nesting in the
+          Assets panel.
+        </p>
+        <p>Of course, you should still use this feature intentionally :)</p>
+        <div class="image-set">
+          <figure>
+            <img
+              alt="How a toast component looks in the Assets panel when placed inside a named section"
+              src="images/9a.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>A section is used intentionally
+              to group components. (Note that section used instead of a frame).
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="How a toast component looks in the Assets panel when placed inside an unnamed frame"
+              src="images/9b.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Component was most likely
+              placed in a frame to organize the library file, without
+              considering how it impacts the Assets panel.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h2>
+          <a name="no-recursive-components"
+            >Don't create recursive components.</a
+          >
+        </h2>
+        <p>
+          Don't use an instance of a component to create another variant of that
+          component. This creates a poor experience for everyone, consumers and
+          maintainers.
+        </p>
+        <figure>
+          <img alt="A recursive component" src="images/11a.png" />
+          <figcaption>
+            Instance of an <i>Accordion Item</i> is used to create another
+            variant of the same <i>Accordion Item</i> component. Confusing,
+            isn't it?
+          </figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2><a name="icons">Make icon components obvious.</a></h2>
+        <p>
+          You can add "Icon" at the end of the name. This makes it easy to
+          differentiate it from a different component with a matching name:
+        </p>
+
+        <div class="image-set">
+          <figure>
+            <img alt="Menu and menu in the Assets panel" src="images/13a.png" />
+            <figcaption>
+              <span class="label">Correct</span>Menu icon has "Icon" at the end
+              of the name.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Menu icon and menu in the Assets panel"
+              src="images/13b.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>There's no indication that the
+              menu icon is an icon.
+            </figcaption>
+          </figure>
+        </div>
+        <p>
+          This becomes even handier in the instance swapping settings (since the
+          thumbnail is much smaller that it is in the Assets):
+        </p>
+        <div class="image-set">
+          <figure>
+            <img
+              alt="Menu and menu in the instance swap settings"
+              src="images/13c.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Menu icon has "Icon" at the end
+              of the name.
+            </figcaption>
+          </figure>
+          <figure class="negative">
+            <img
+              alt="Menu icon and menu in the instance swap settings"
+              src="images/13d.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>It's hard to tell right away
+              which component is the icon.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2>
+          <a name="unnecessary-components"
+            >Don't create unnecessary components.</a
+          >
+        </h2>
+        <p>
+          Not everything has to be a (sub)component, especially when it comes to
+          component parts. The selection tool makes it easy to update component
+          parts without resorting to creating another (most likely hidden)
+          component.
+        </p>
+        <div class="image-set">
+          <figure>
+            <img
+              alt="Using a selection tool to select a matching part of all toast componenent variants"
+              src="images/14b.png"
+            />
+            <figcaption>
+              <span class="label">Correct</span>Selection tool eliminates the
+              need for creating many subcomponents.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              alt="Extracting a part of the toast component as a subcomponent"
+              src="images/14a.png"
+            />
+            <figcaption>
+              <span class="label">Incorrect</span>Do icon + text really have to
+              be their own component?
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2>
+          <a name="unnecessary-documentation"
+            >Don't create unnecessary documentation.</a
+          >
+        </h2>
+        <p>
+          The best way to learn about a component is by playing with it. Adding
+          documentation inside Figma is usually not effective, because most
+          designers don't have the component library file open as a reference.
+          They primarily interact with the components through the Assets panel.
+          Adding unnecessary documentation also creates more noise and
+          management work for the library maintainers.
+        </p>
+        <p>
+          If you want to have documentation, the best way is to have a simple
+          website that everyone at your company can access.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>By masha, created on October 20th 2023.</p>
+    </footer>
+  </body>
+</html>
