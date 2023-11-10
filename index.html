@@ -343,8 +343,8 @@
         </h2>
         <p>
           Don't use an instance of a component to create another variant of that
-          component. This creates a poor experience for everyone, consumers and
-          maintainers.
+          component. This creates a poor experience for everyone who maintains
+          and uses the library.
         </p>
         <figure>
           <img alt="A recursive component" src="images/11a.png" />
@@ -365,7 +365,8 @@
         </h2>
         <p>
           Place the most commonly used variant in the top left corner of the
-          component set to make it a default one.
+          component set to make it the default one. This will greatly reduce the
+          amount of time designers spend on component configuration.
         </p>
 
         <div class="image-set">
@@ -376,7 +377,7 @@
             />
             <figcaption>
               <span class="label">Correct</span>Most commonly used button
-              variant is in the top left corner, which makes it appear by
+              variant is in the top left corner, which makes it show up by
               default when searching Assets.
             </figcaption>
           </figure>
@@ -390,32 +391,6 @@
               organized, it's not user friendly. The small, filled button
               variant is the default one, even though it's most likely not as
               frequently used.
-            </figcaption>
-          </figure>
-        </div>
-        <p>
-          This becomes even handier in the instance swapping settings (since the
-          thumbnail is much smaller that it is in the Assets):
-        </p>
-        <div class="image-set">
-          <figure>
-            <img
-              alt="Menu and menu in the instance swap settings"
-              src="images/13c.png"
-            />
-            <figcaption>
-              <span class="label">Correct</span>Menu icon has "Icon" at the end
-              of the name.
-            </figcaption>
-          </figure>
-          <figure class="negative">
-            <img
-              alt="Menu icon and menu in the instance swap settings"
-              src="images/13d.png"
-            />
-            <figcaption>
-              <span class="label">Incorrect</span>It's hard to tell right away
-              which component is the icon.
             </figcaption>
           </figure>
         </div>
@@ -517,9 +492,9 @@
         <p>
           The best way to learn about a component is by playing with it. Adding
           documentation inside Figma is usually not effective, because most
-          designers don't have the component library file open as a reference.
+          designers don't keep the component library file open as reference.
           They primarily interact with the components through the Assets panel.
-          Adding unnecessary documentation also creates more noise and
+          Adding unnecessary documentation also creates more unnecessary
           management work for the library maintainers.
         </p>
         <p>
@@ -530,7 +505,7 @@
     </main>
     <footer>
       <p>
-        By <a href="https://mash.haus">masha</a>, last updated November 8th
+        By <a href="https://mash.haus">masha</a>, last updated November 10th
         2023.
       </p>
     </footer>
